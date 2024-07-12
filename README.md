@@ -1,87 +1,27 @@
-# Extension
-Create the Directory Structure:-
-mkdir chrome-extension\images
-cd chrome-extension
---------------------------------------------
-Create the Manifest File:-
-echo. > manifest.json
---------------------------------------------
+# Extensionapp
 
-Create the Popup HTML File:-
-echo. > popup.html
---------------------------------------------
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.6.
 
-Create the Popup JavaScript File:-
-echo. > popup.js
---------------------------------------------
+## Development server
 
-Create the Background Script File:-
-echo. > background.js
---------------------------------------------
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Create the Icon Files
-You can create placeholder files for the icons:
-echo. > images\icon16.png
-echo. > images\icon48.png
-echo. > images\icon128.png
---------------------------------------------
+## Code scaffolding
 
-manifest.json:
-{
-  "manifest_version": 3,
-  "name": "My Web App Extension",
-  "version": "1.0",
-  "description": "A Chrome extension for my web app",
-  "permissions": [
-    "activeTab",
-    "storage"
-  ],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "images/icon16.png",
-      "48": "images/icon48.png",
-      "128": "images/icon128.png"
-    }
-  },
-  "background": {
-    "service_worker": "background.js"
-  }
-}
------------------------------------------------
-popup.html:
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Web App Extension</title>
-  <style>
-    body {
-      width: 300px;
-      padding: 10px;
-    }
-  </style>
-</head>
-<body>
-  <h1>My Web App</h1>
-  <button id="openApp">Open App</button>
-  <script src="popup.js"></script>
-</body>
-</html>
-------------------------------------------------------------------------------------------------------
-popup.js:
-document.getElementById('openApp').addEventListener('click', () => {
-  chrome.tabs.create({ url: 'https://your-web-app-url.com' });
-});
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-background.js:
-chrome.runtime.onInstalled.addListener(() => {
-  console.log('Extension installed');
-});
---------------------------------------------------------------------------------------------------
- Add Icons:-
-Add icons for your extension in the images directory. The manifest.json refers to icon16.png, icon48.png, and icon128.png. Make sure these files exist in the specified directory.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Load Your Extension in Chrome:-
-1.Open Chrome and go to chrome://extensions/.
-2.Enable "Developer mode" using the toggle in the top right.
-3.Click "Load unpacked" and select your project directory.
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
